@@ -32,7 +32,7 @@ __all__ = ["FLRW", "LambdaCDM", "FlatLambdaCDM", "wCDM", "FlatwCDM",
            "Flatw0waCDM", "w0waCDM", "wpwaCDM", "w0wzCDM",
            "default_cosmology"] + parameters.available
 
-__doctest_requires__ = {'*': ['scipy.integrate']}
+__doctest_requires__ = {'*': ['scipy']}
 
 # Notes about speeding up integrals:
 # ---------------------------------
@@ -2870,11 +2870,13 @@ class default_cosmology(ScienceState):
         >>> from astropy.cosmology import default_cosmology, WMAP7
         >>> with default_cosmology.set(WMAP7):
         ...     # WMAP7 cosmology in effect
+        ...     pass
 
     Or, you may use a string::
 
         >>> with default_cosmology.set('WMAP7'):
         ...     # WMAP7 cosmology in effect
+        ...     pass
     """
     _value = 'WMAP9'
 
